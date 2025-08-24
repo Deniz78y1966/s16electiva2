@@ -1,0 +1,15 @@
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/bin/Debug/net9.0/HolaMundoApp
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/bin/Debug/net9.0/HolaMundoApp.deps.json
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/bin/Debug/net9.0/HolaMundoApp.runtimeconfig.json
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/bin/Debug/net9.0/HolaMundoApp.dll
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/bin/Debug/net9.0/HolaMundoApp.pdb
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/obj/Debug/net9.0/HolaMundoApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/obj/Debug/net9.0/HolaMundoApp.AssemblyInfoInputs.cache
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/obj/Debug/net9.0/HolaMundoApp.AssemblyInfo.cs
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/obj/Debug/net9.0/HolaMundoApp.csproj.CoreCompileInputs.cache
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/obj/Debug/net9.0/HolaMundoApp.sourcelink.json
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/obj/Debug/net9.0/HolaMundoApp.dll
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/obj/Debug/net9.0/refint/HolaMundoApp.dll
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/obj/Debug/net9.0/HolaMundoApp.pdb
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/obj/Debug/net9.0/HolaMundoApp.genruntimeconfig.cache
+/Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/obj/Debug/net9.0/ref/HolaMundoApp.dll
