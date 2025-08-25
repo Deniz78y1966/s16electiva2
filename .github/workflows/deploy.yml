@@ -22,7 +22,7 @@ jobs:
 
       # 3) Restaurar dependencias
       - name: Restore dependencies
-        run: dotnet restore /Users/genesisdenissematosrosario/GitProjects/s16electiva2/
+        run: dotnet restore /Users/genesisdenissematosrosario/GitProjects/s16electiva2
 
       # 4) Compilar la aplicación
       - name: Build app
