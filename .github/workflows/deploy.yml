@@ -18,9 +18,9 @@ jobs:
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0.203'
+          dotnet-version: '8.0.x'
 
-      # 3) Restaurar dependencias (app + tests)
+      # 3) Restaurar dependencias
       - name: Restore dependencies
         run: dotnet restore s16electiva2
 
@@ -28,11 +28,11 @@ jobs:
       - name: Build app
         run: dotnet build s16electiva2/HolaMundoApp/HolaMundoApp.csproj --configuration Release --no-restore
 
-      # 5) Ejecutar pruebas unitarias (NUnit)
+      # 5) Ejecutar tests NUnit
       - name: Run tests
         run: dotnet test s16electiva2/HolaMundoTests/HolaMundoTests.csproj --configuration Release --no-build --verbosity normal
 
-      # 6) Definir variables para las etiquetas Docker
+      # 6) Variables para etiquetas Docker
       - name: Set up variables
         run: |
           echo "SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
@@ -52,16 +52,17 @@ jobs:
                        -t ${{ secrets.DOCKER_USERNAME }}/holamundoapp:${{ env.SHA_SHORT }} \
                        -t ${{ secrets.DOCKER_USERNAME }}/holamundoapp:${{ env.DATE }} .
 
-      # 9) Subir la imagen a Docker Hub
+      # 9) Subir imagen a Docker Hub
       - name: Push Docker images
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/holamundoapp:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/holamundoapp:${{ env.SHA_SHORT }}
           docker push ${{ secrets.DOCKER_USERNAME }}/holamundoapp:${{ env.DATE }}
 
-      # 10) Desplegar en Render
+      # 10) Trigger Render deploy
       - name: Trigger Render deploy
         run: |
           curl -X POST https://api.render.com/v1/services/${{ secrets.RENDER_SERVICE_ID }}/deploys \
           -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
-          -H "Content-Type: application/json" 
+          -H "Content-Type: application/json"
+
