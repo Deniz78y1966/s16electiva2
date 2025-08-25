@@ -26,11 +26,11 @@ jobs:
 
       # 4) Compilar la aplicación
       - name: Build app
-        run: dotnet build s16electiva2/HolaMundoApp/HolaMundoApp.csproj --configuration Release --no-restore
+        run: dotnet build /Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/HolaMundoApp.csproj --configuration Release --no-restore
 
       # 5) Ejecutar tests NUnit
       - name: Run tests
-        run: dotnet test s16electiva2/HolaMundoTests/HolaMundoTests.csproj --configuration Release --no-build --verbosity normal
+        run: dotnet test /Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoTests/HolaMundoTests.csproj --configuration Release --no-build --verbosity normal
 
       # 6) Variables para etiquetas Docker
       - name: Set up variables

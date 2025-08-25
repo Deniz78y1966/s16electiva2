@@ -9,8 +9,8 @@ WORKDIR /src
 COPY . .
 
 # Restaurar y publicar solo tu app
-RUN dotnet restore s16electiva2/HolaMundoApp/HolaMundoApp.csproj
-RUN dotnet publish s16electiva2/HolaMundoApp/HolaMundoApp.csproj -c Release -o /app/publish
+RUN dotnet restore /Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/HolaMundoApp.csproj
+RUN dotnet publish /Users/genesisdenissematosrosario/GitProjects/s16electiva2/HolaMundoApp/HolaMundoApp.csproj -c Release -o /app/publish
 
 # Imagen final
 FROM base AS final
