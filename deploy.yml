@@ -25,11 +25,11 @@ jobs:
         run: dotnet restore s16electiva2
 
       # 4) Compilar la aplicación
-      - name: Build
+      - name: Build app
         run: dotnet build s16electiva2/HolaMundoApp/HolaMundoApp.csproj --configuration Release --no-restore
 
       # 5) Ejecutar pruebas unitarias (NUnit)
-      - name: Run unit tests
+      - name: Run tests
         run: dotnet test s16electiva2/HolaMundoTests/HolaMundoTests.csproj --configuration Release --no-build --verbosity normal
 
       # 6) Definir variables para las etiquetas Docker

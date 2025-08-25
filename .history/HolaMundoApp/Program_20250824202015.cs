@@ -14,4 +14,3 @@ app.MapGet("/", () =>
 
 //execute on server
 app.Run();
-

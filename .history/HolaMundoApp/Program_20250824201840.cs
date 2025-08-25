@@ -5,13 +5,11 @@ using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
-
-app.MapGet("/", () =>
+class Program
 {
-    var holaMundo = new HolaMundo();
-    return holaMundo.GetMessage();
-});
-
-//execute on server
-app.Run();
-
+    static void Main(string[] args)
+    {
+        var holaMundo = new HolaMundo();
+        Console.WriteLine(holaMundo.GetMessage());
+    }
+}

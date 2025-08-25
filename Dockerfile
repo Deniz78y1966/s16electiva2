@@ -1,20 +1,20 @@
 # Etapa de build
-FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
+EXPOSE 8080
 
-# Copiar archivos de proyecto y restaurar dependencias
-COPY HolaMundoApp/*.csproj ./HolaMundoApp/
-RUN dotnet restore HolaMundoApp/HolaMundoApp.csproj
+#Imagen para compilar
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY . .
 
-# Copiar el resto de los archivos y compilar
-COPY HolaMundoApp/. ./HolaMundoApp/
-WORKDIR /app/HolaMundoApp
-RUN dotnet publish -c Release -o out
+# Restaurar y publicar solo tu app
+RUN dotnet restore s16electiva2/HolaMundoApp/HolaMundoApp.csproj
+RUN dotnet publish s16electiva2/HolaMundoApp/HolaMundoApp.csproj -c Release -o /app/publish
 
-# Etapa de runtime
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
+# Imagen final
+FROM base AS final
 WORKDIR /app
-COPY --from=build /app/HolaMundoApp/out ./
-
-# Cambia 'HolaMundoApp.dll' por el nombre correcto si tu proyecto principal tiene otro nombre
+COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "HolaMundoApp.dll"]
+

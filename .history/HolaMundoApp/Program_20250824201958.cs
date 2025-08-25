@@ -11,7 +11,11 @@ app.MapGet("/", () =>
     var holaMundo = new HolaMundo();
     return holaMundo.GetMessage();
 });
-
-//execute on server
-app.Run();
-
+class Program
+{
+    static void Main(string[] args)
+    {
+        var holaMundo = new HolaMundo();
+        Console.WriteLine(holaMundo.GetMessage());
+    }
+}
